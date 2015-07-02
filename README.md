@@ -16,7 +16,7 @@ If you use
       compress: {drop_console: true}
     }),
 ```
-this won't have any performance + code size impact in production builds.
+this won't have any performance + code size impact in production builds. (Or you do not use the plugin at all for your production config. Now that I think about it. :))
 
 # Usage
 ```
