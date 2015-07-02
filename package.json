@@ -1,0 +1,60 @@
+{
+  "name": "babel-plugin-object-assign",
+  "version": "1.2.0",
+  "description": "Babel plugin to replace Object.assign with the extends helper",
+  "author": {
+    "name": "Jed Watson"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babel-plugins/babel-plugin-object-assign.git"
+  },
+  "peerDependencies": {
+    "babel-core": ">=5.2.0"
+  },
+  "main": "lib/index.js",
+  "devDependencies": {
+    "babel": "^5.6.0"
+  },
+  "scripts": {
+    "build": "babel-plugin build",
+    "push": "babel-plugin publish",
+    "test": "babel-plugin test"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "object",
+    "assign",
+    "extend",
+    "polyfill"
+  ],
+  "gitHead": "5b046133df474eb2bc9d94fd9a875439986c1467",
+  "bugs": {
+    "url": "https://github.com/babel-plugins/babel-plugin-object-assign/issues"
+  },
+  "homepage": "https://github.com/babel-plugins/babel-plugin-object-assign",
+  "_id": "babel-plugin-object-assign@1.2.0",
+  "_shasum": "f11b798cc1537eadd9ebdbec5593dd683e7be54a",
+  "_from": "babel-plugin-object-assign@*",
+  "_npmVersion": "2.7.5",
+  "_nodeVersion": "0.12.2",
+  "_npmUser": {
+    "name": "jedwatson",
+    "email": "jed.watson@me.com"
+  },
+  "dist": {
+    "shasum": "f11b798cc1537eadd9ebdbec5593dd683e7be54a",
+    "tarball": "http://registry.npmjs.org/babel-plugin-object-assign/-/babel-plugin-object-assign-1.2.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jedwatson",
+      "email": "jed.watson@me.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/babel-plugin-object-assign/-/babel-plugin-object-assign-1.2.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
