@@ -20,7 +20,7 @@ Motivation:
 
 # Usage
 ```
-$ babel --plugins object-assign script.js
+$ babel --plugins import-asserts script.js
 ```
 
 or in a `.babelrc`:
