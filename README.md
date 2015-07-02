@@ -14,7 +14,6 @@ Motivation: catching errors when you forget to export a file from an `index.js` 
 
 **Note 2**: This only works for codebases where you can guarantee that every imported thing will be instantly bound. It is theoretically possible for imported things  to *initially* be `undefined` and *later* defined. This is because ES6 Imports are "live binding". See [here](https://github.com/ModuleLoader/es6-module-loader/wiki/Circular-References-&-Bindings) for more information. 
 
-Example:
 # Usage
 ```
 $ babel --plugins object-assign script.js
