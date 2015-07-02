@@ -10,6 +10,14 @@ below the import statement. The same goes for `import foo from './baz';`.
 
 Motivation: catching errors when you forget to export a file from an `index.js` file.
 
+If you use
+```
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {drop_console: true}
+    }),
+```
+this won't have any performance + code size impact in production builds.
+
 # Usage
 ```
 $ babel --plugins object-assign script.js
