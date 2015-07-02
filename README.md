@@ -12,7 +12,7 @@ Motivation: catching errors when you forget to export a file from an `index.js` 
 
 **Note**: Only use this for development builds, you don't wanna bloat the production bundle. 
 
-**Note 2**: This only works for codebases where you can guarantee that every imported thing will be instantly bound. It is theoretically possible for imported things  to *initially* show up as `undefined` and *later* as defined. See [here](https://github.com/ModuleLoader/es6-module-loader/wiki/Circular-References-&-Bindings) for more information. 
+**Note 2**: This only works for codebases where you can guarantee that every imported thing will be instantly bound. It is theoretically possible for imported things  to *initially* be `undefined` and *later* defined. This is because ES6 Imports are "live binding". See [here](https://github.com/ModuleLoader/es6-module-loader/wiki/Circular-References-&-Bindings) for more information. 
 
 Example:
 # Usage
