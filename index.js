@@ -15,7 +15,7 @@ module.exports = function (babel) {
       t.unaryExpression('!', t.identifier(thing));
 
     var consoleStatement = console_('log', 
-        [t.literal(thing + ' is undefined.')]);
+        [t.literal('['), t.identifier('__filename'), t.literal(']'), t.literal(thing + ' is undefined.')]);
 
     var logIfUndefined = t.logicalExpression('&&', thingIsUndefined, consoleStatement);
 
