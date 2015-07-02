@@ -10,14 +10,11 @@ below the import statement. The same goes for `import foo from './baz';`.
 
 Motivation: catching errors when you forget to export a file from an `index.js` file.
 
-If you use
-```
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {drop_console: true}
-    }),
-```
-this won't have any performance + code size impact in production builds. (Or you do not use the plugin at all for your production config. Now that I think about it. :))
+**Note**: Only use this for development builds, you don't wanna bloat the production bundle. 
 
+**Note 2**: This only works for codebases where you can guarantee that every imported thing will be instantly bound. It is theoretically possible for imported things  to *initially* show up as `undefined` and *later* as defined. See [here](https://github.com/ModuleLoader/es6-module-loader/wiki/Circular-References-&-Bindings) for more information. 
+
+Example:
 # Usage
 ```
 $ babel --plugins object-assign script.js
