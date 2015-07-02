@@ -14,7 +14,7 @@ module.exports = function (babel) {
     var thingIsUndefined = 
       t.unaryExpression('!', t.identifier(thing));
 
-    var consoleStatement = console_('debug', 
+    var consoleStatement = console_('log', 
         [t.literal(thing + ' is undefined.')]);
 
     var logIfUndefined = t.logicalExpression('&&', thingIsUndefined, consoleStatement);
@@ -31,6 +31,7 @@ module.exports = function (babel) {
         var self = this;
         node.specifiers.map(function(specifier, idx) {
           var name = specifier.local.name;
+          self.insertAfter(consoleTest(name));
 
         })
       }
