@@ -1,22 +1,37 @@
 module.exports = function (babel) {
-  function consoleAssert(thing) {
+  var t = babel.types;
+
+  function console_(method, arguments) {
     return t.expressionStatement(t.callExpression(
-      t.memberExpression(t.identifier('console'), t.identifier('assert')),
-      [t.identifier(thing), t.literal(thing + ' is undefined.')]
-    ));
+      t.memberExpression(
+        t.identifier('console'), 
+        t.identifier(method)),
+      arguments));
+  }
+  
+  function consoleTest(thing) {
+
+    var thingIsUndefined = 
+      t.unaryExpression('!', t.identifier(thing));
+
+    var consoleStatement = console_('debug', 
+        [t.literal(thing + ' is undefined.')]);
+
+    var logIfUndefined = t.logicalExpression('&&', thingIsUndefined, consoleStatement);
+
+    return logIfUndefined;
+
   }
 
-  var t = babel.types;
 
   return new babel.Plugin("import-asserts", {
 
     visitor: {
       ImportDeclaration: function (node, parent) {
-
         var self = this;
-        node.specifiers.map(function(specifier) {
+        node.specifiers.map(function(specifier, idx) {
           var name = specifier.local.name;
-          self.insertAfter(consoleAssert(name));
+
         })
       }
     }
